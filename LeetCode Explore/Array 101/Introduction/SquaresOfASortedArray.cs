@@ -1,15 +1,5 @@
 public class Solution {
-    public int[] SortedSquares(int[] nums) {
-        if(nums[0] >= 0)
-        {
-            for(int i = 0; i < nums.Length; i++)
-            {
-                nums[i] = nums[i] * nums[i];
-            }
-            
-            return nums;
-        }
-        
+    public int[] SortedSquares(int[] nums) {    
         int[] result = new int[nums.Length];
         int right = 0;
         int left = nums.Length - 1;
