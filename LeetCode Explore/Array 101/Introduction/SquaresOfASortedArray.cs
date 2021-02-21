@@ -6,28 +6,27 @@ public class Solution {
             {
                 nums[i] = nums[i] * nums[i];
             }
-
+            
             return nums;
         }
-
+        
         int[] result = new int[nums.Length];
-        nums.CopyTo(result, 0);
-        int left = 0;
-        int right = nums.Length - 1;
-
-        for(int i = nums.Length - 1; i >= 0; i--)
+        int right = 0;
+        int left = nums.Length - 1;
+        
+        for(int i = nums.Length - 1; i > -1; i--)
         {
-            if(Math.Abs(nums[right]) >= Math.Abs(nums[left]))
+            if(nums[right] * nums[right] >= nums[left] * nums[left])
             {
                 result[i] = nums[right] * nums[right];
-                right--;
+                right++;
                 continue;
             }
-
+            
             result[i] = nums[left] * nums[left];
-            left++;
+            left--;
         }
-
+        
         return result;
     }
 }
